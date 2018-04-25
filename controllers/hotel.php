@@ -9,7 +9,7 @@ class Hotel extends Controller {
     public function index() {
         $HotelsArray = $this->getHotelsList();
         $this->view->render('header',['title'=>'Hotels']);
-        $this->view->render('hotel/hotel',['offers'=>'offers']);
+        $this->view->render('hotel/hotel',['offers'=>$HotelsArray]);
         $this->view->render('footer',[]);
     }
 
