@@ -3,7 +3,9 @@
         <h1>Hotel deals</h1>
 
         {% for hotel in offers.Hotel %}
+        <div class="row">
             {{ hotel.hotelInfo.hotelName }}
+        </div>
         {% endfor %}
     </div>
 </div>
