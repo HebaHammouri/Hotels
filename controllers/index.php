@@ -17,7 +17,7 @@ class Index extends Controller {
     private function getHotels($URL)
     {
         try {
-            $oResponse = \Httpful\Request::get($URL)
+            $oResponse = Httpful\Request::get($URL)
                 ->expectsJson()
                 ->send();
 
