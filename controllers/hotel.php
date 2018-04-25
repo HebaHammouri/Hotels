@@ -9,7 +9,7 @@ class Hotel extends Controller {
     public function index() {
         $HotelsArray = $this->getHotelsList();
         $this->view->render('header',['title'=>'Hotels']);
-        $this->view->render('hotel/hotel',[]);
+        $this->view->render('hotel/hotel',['offers'=>'offers']);
         $this->view->render('footer',[]);
     }
 
@@ -25,7 +25,7 @@ class Hotel extends Controller {
             curl_setopt($request, CURLOPT_RETURNTRANSFER, true);
             $result = curl_exec($request);
             curl_close($request);
-            return $result;
+            return $result->offers;
 
         } catch (Exception $e) {
             return null;

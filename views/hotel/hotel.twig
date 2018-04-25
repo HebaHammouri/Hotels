@@ -2,6 +2,8 @@
     <div class="row">
         <h1>Hotel deals</h1>
 
-       Hello !!
+        {% for hotel in offers.Hotel %}
+            {{ hotel.hotelInfo.hotelName }}
+        {% endfor %}
     </div>
 </div>
