@@ -1,12 +1,17 @@
 <div class="container">
     <div class="row">
         <h1>Hotel deals</h1>
-
+        <table></table>
         {% for hotel in offers.Hotel %}
-        <div class="row">
-            <img src="{{ hotel.hotelInfo.hotelImageUrl }}">
-            {{ hotel.hotelInfo.hotelName }}
-        </div>
+        <tr>
+            <td>
+                <img src="{{ hotel.hotelInfo.hotelImageUrl }}">
+            </td>
+            <td>
+                <a href="{{ hotel.hotelInfositeUrl.hotelUrls }}">{{ hotel.hotelInfo.hotelName }}</a>
+            </td>
+        </tr>
         {% endfor %}
+        </table>
     </div>
 </div>
