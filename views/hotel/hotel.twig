@@ -8,14 +8,27 @@
                 <img src="{{ hotel.hotelInfo.hotelImageUrl }}">
             </td>
             <td>
-                <b><a href="{{ hotel.hotelInfositeUrl.hotelUrls }}">{{ hotel.hotelInfo.hotelName }}</a></b> <br />
+                <b><a href="{{ hotel.hotelInfositeUrl.hotelUrls }}">{{ hotel.hotelInfo.hotelName }}</a></b>
+                <span class="badge badge-secondary">{{ hotel.hotelInfo.hotelStarRating|number_format }}/5</span><br />
                 {{ hotel.destination.country }} - {{ hotel.destination.city }}<br />
-                <b>Rate:</b> {{ hotel.hotelInfo.hotelStarRating|number_format }}/5<br />
+                <b>Rate:</b> <br />
                 <b>Price per Night:</b>{{ hotel.hotelPricingInfo.originalPricePerNight }} {{ hotel.hotelPricingInfo.currency }}<br />
                 <i>Save Up To {{ hotel.hotelPricingInfo.percentSavings|number_format }} %</i>
             </td>
         </tr>
         {% endfor %}
         </table>
+        <div class="card-deck">
+        {% for hotel in offers.Hotel %}
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="{{ hotel.hotelInfo.hotelImageUrl }}" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">{{ hotel.hotelInfo.hotelName }}<span class="badge badge-secondary">{{ hotel.hotelInfo.hotelStarRating|number_format }}/5</span></h5>
+                <p class="card-text">Price per Night:</b>{{ hotel.hotelPricingInfo.originalPricePerNight }} {{ hotel.hotelPricingInfo.currency }}
+                    <i>Save Up To {{ hotel.hotelPricingInfo.percentSavings|number_format }} %</i></p>
+            </div>
+        </div>
+        {% endfor %}
+        </div>
     </div>
 </div>
