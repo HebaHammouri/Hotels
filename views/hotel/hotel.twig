@@ -17,9 +17,8 @@
         {#</tr>#}
         {#{% endfor %}#}
         {#</table>#}
-        <div class="card-deck">
         {% for hotel in offers.Hotel %}
-        <div class="card" style="width: 18rem;">
+        <div class="card card mb-3">
             <img class="card-img-top" src="{{ hotel.hotelInfo.hotelImageUrl }}" alt="Card image cap">
             <div class="card-body">
                 <h5 class="card-title">{{ hotel.hotelInfo.hotelName }}<span class="badge badge-secondary">{{ hotel.hotelInfo.hotelStarRating|number_format }}/5</span></h5>
@@ -28,5 +27,4 @@
             </div>
         </div>
         {% endfor %}
-        </div>
 </div>
