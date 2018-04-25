@@ -2,38 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8020bc95-a599-4b04-b062-e468ea62d925" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/ExpHotels.iml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/php.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Commands/CreateController.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/LICENSE" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/README.md" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/composer.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/composer.lock" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/config.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/controllers/index.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/index.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/libs/Bootstrap.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/libs/Controller.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/libs/Database.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/libs/Model.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/libs/Session.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/libs/View.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/models/index.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/css/bootstrap.min.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/fonts/glyphicons-halflings-regular.eot" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/fonts/glyphicons-halflings-regular.svg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/fonts/glyphicons-halflings-regular.ttf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/fonts/glyphicons-halflings-regular.woff" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/fonts/glyphicons-halflings-regular.woff2" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/bootstrap.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/views/footer.twig" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/views/header.twig" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/views/index/index.twig" />
+      <change beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -59,7 +28,7 @@
         <entry file="file://$PROJECT_DIR$/composer.json">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="180">
-              <caret line="12" column="21" lean-forward="false" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
+              <caret line="12" column="20" lean-forward="false" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -158,12 +127,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1524648863572</updated>
-      <workItem from="1524649113249" duration="89000" />
+      <workItem from="1524649113249" duration="109000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="89000" />
+    <option name="totallyTimeSpent" value="109000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="811" extended-state="0" />
@@ -203,7 +172,7 @@
     <entry file="file://$PROJECT_DIR$/composer.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
-          <caret line="12" column="21" lean-forward="false" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
+          <caret line="12" column="20" lean-forward="false" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
           <folding />
         </state>
       </provider>
