@@ -17,11 +17,12 @@ class Index extends Controller {
     private function getHotels($URL)
     {
         try {
-            $oResponse = Httpful\Request::get($URL)
-                ->expectsJson()
-                ->send();
-
-           dump($oResponse);die();
+            $ch = curl_init($URL);
+            curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            $result = curl_exec($ch);
+            curl_close($ch);
+           dump($result);die();
 
         } catch (Exception $e) {
 

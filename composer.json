@@ -5,8 +5,7 @@
     "require": {
         "php": ">=5.6.4",
         "twig/twig": "^1.29",
-        "symfony/console": "^3.2",
-        "nategood/httpful": "^0.2.20"
+        "symfony/console": "^3.2"
     },
     "autoload": {
         "classmap": ["Commands"]
