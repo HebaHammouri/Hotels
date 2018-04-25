@@ -4,6 +4,7 @@
 
         {% for hotel in offers.Hotel %}
         <div class="row">
+            <img src="{{ hotel.hotelInfo.hotelImageUrl }}">
             {{ hotel.hotelInfo.hotelName }}
         </div>
         {% endfor %}
