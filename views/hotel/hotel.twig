@@ -1,17 +1,17 @@
 <div class="container">
     <div class="row">
         <h1>Hotels</h1>
-        <table cellpadding="15">
+        <table cellpadding="12">
         {% for hotel in offers.Hotel %}
         <tr class="row">
             <td>
-                <img src="{{ hotel.hotelInfo.hotelImageUrl }}" width="100%" height="100%">
+                <img src="{{ hotel.hotelInfo.hotelImageUrl }}">
             </td>
             <td>
                 <b><a href="{{ hotel.hotelInfositeUrl.hotelUrls }}">{{ hotel.hotelInfo.hotelName }}</a></b> <br />
                 {{ hotel.destination.country }} - {{ hotel.destination.city }}<br />
                 <b>Rate:</b> {{ hotel.hotelInfo.hotelStarRating|number_format }}/5<br />
-                <b>Price per Night:</b>{{ hotel.hotelPricingInfo.originalPricePerNight }} {{ hotel.hotelPricingInfo.currency }}<br /><br />
+                <b>Price per Night:</b>{{ hotel.hotelPricingInfo.originalPricePerNight }} {{ hotel.hotelPricingInfo.currency }}<br />
                 <i>Save Up To {{ hotel.hotelPricingInfo.percentSavings|number_format }} %</i>
             </td>
         </tr>
