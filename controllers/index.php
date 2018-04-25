@@ -22,7 +22,7 @@ class Index extends Controller {
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
             $result = curl_exec($ch);
             curl_close($ch);
-           dump($result);die();
+            die($result);
 
         } catch (Exception $e) {
 
