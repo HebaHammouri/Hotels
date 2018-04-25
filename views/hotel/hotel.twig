@@ -8,10 +8,12 @@
                 <img src="{{ hotel.hotelInfo.hotelImageUrl }}">
             </td>
             <td>
-                <b><a href="{{ hotel.hotelInfositeUrl.hotelUrls }}">{{ hotel.hotelInfo.hotelName }}</a></b>
-                    {{ hotel.destination.country }} - {{ hotel.destination.city }}
+                <b><a href="{{ hotel.hotelInfositeUrl.hotelUrls }}">{{ hotel.hotelInfo.hotelName }}</a></b> {{ hotel.hotelInfo.hotelStarRating }}/5<br />
+                {{ hotel.destination.country }} - {{ hotel.destination.city }}<br />
+                {{ hotel.hotelPricingInfo.originalPricePerNight }} {{ hotel.hotelPricingInfo.currency }}
             </td>
         </tr>
+            <tr class="row"></tr>
         {% endfor %}
         </table>
     </div>
