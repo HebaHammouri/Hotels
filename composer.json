@@ -1,0 +1,15 @@
+{
+    "name": "codeurx/php-mvc",
+    "description": "A Powerful PHP MVC Framework",
+    "type": "project",
+    "require": {
+        "php": ">=5.6.4",
+        "twig/twig": "^1.29",
+        "symfony/console": "^3.2"
+    },
+    "autoload": {
+        "classmap": ["Commands"]
+    },
+    "license": "MIT",
+    ]
+}
