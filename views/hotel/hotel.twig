@@ -3,12 +3,18 @@
         <h1>Hotel deals</h1>
         <table></table>
         {% for hotel in offers.Hotel %}
-        <tr>
+        <tr class="row">
             <td>
                 <img src="{{ hotel.hotelInfo.hotelImageUrl }}">
             </td>
             <td>
-                <a href="{{ hotel.hotelInfositeUrl.hotelUrls }}">{{ hotel.hotelInfo.hotelName }}</a>
+                <div class="row">
+                <b><a href="{{ hotel.hotelInfositeUrl.hotelUrls }}">{{ hotel.hotelInfo.hotelName }}</a></b>
+                </div>
+                <div class="row">
+                    {{ hotel.destination.country }} - {{ hotel.destination.city }}
+                </div>
+
             </td>
         </tr>
         {% endfor %}
