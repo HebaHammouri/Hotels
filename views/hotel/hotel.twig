@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
         <h1>Hotels</h1>
-        <table cellpadding="10">
+        <table cellpadding="10" cellspacing="15">
         {% for hotel in offers.Hotel %}
         <tr class="row">
             <td>
@@ -10,9 +10,9 @@
             <td>
                 <b><a href="{{ hotel.hotelInfositeUrl.hotelUrls }}">{{ hotel.hotelInfo.hotelName }}</a></b> <br />
                 {{ hotel.destination.country }} - {{ hotel.destination.city }}<br />
-                <b>Rate:</b> {{ hotel.hotelInfo.hotelStarRating }}/5<br />
-                <b>Price per Night:</b>{{ hotel.hotelPricingInfo.originalPricePerNight }} {{ hotel.hotelPricingInfo.currency }}
-                <i>Save Up To {{ hotel.hotelPricingInfo.percentSavings }} %</i>
+                <b>Rate:</b> {{ hotel.hotelInfo.hotelStarRating|number_format }}/5<br />
+                <b>Price per Night:</b>{{ hotel.hotelPricingInfo.originalPricePerNight }} {{ hotel.hotelPricingInfo.currency }}<br /><br />
+                <i>Save Up To {{ hotel.hotelPricingInfo.percentSavings|number_format }} %</i>
             </td>
         </tr>
         {% endfor %}
