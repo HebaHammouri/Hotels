@@ -7,25 +7,28 @@ class Index extends Controller {
     }
     
     public function index() {
-        $URL = "https://offersvc.expedia.com/offers/v2/getOffers?scenario=deal-finder&page=foo&uid=foo&productType=Hotel";
-        $this->getHotels($URL);
+        $HotelsArray = $this->getHotelsList();
         $this->view->render('header',['title'=>'Home Page']);
         $this->view->render('index/index',['default'=>'This is the main page welcome!']);
         $this->view->render('footer',[]);
     }
 
-    private function getHotels($URL)
+    /**
+     * Get hotels list
+     */
+    private function getHotelsList()
     {
         try {
-            $ch = curl_init($URL);
-            curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
-            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-            $result = curl_exec($ch);
-            curl_close($ch);
-            die($result);
+            $URL = "https://offersvc.expedia.com/offers/v2/getOffers?scenario=deal-finder&page=foo&uid=foo&productType=Hotel";
+            $request = curl_init($URL);
+            curl_setopt($request, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
+            curl_setopt($request, CURLOPT_RETURNTRANSFER, true);
+            $result = curl_exec($request);
+            curl_close($request);
+            return $result;
 
         } catch (Exception $e) {
-
+            return null;
         }
     }
     
