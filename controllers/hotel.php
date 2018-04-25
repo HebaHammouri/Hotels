@@ -25,8 +25,8 @@ class Hotel extends Controller {
             curl_setopt($request, CURLOPT_RETURNTRANSFER, true);
             $result = curl_exec($request);
             curl_close($request);
-            die($result->offers);
-            return $result->offers;
+            $offers = json_decode($result);
+            return $offers->offers;
 
         } catch (Exception $e) {
             return null;
