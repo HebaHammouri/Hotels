@@ -1,42 +1,51 @@
 <div class="container">
- <div class="row">
-  <h1>Hotel deals</h1>
+    <div class="row">
+        <h1>Search a Hotel</h1>
 
-  <form method="POST" action="https://hhammouri-hotels.herokuapp.com/hotel.php" enctype="multipart/form-data">
+        <form method="POST" action="https://hhammouri-hotels.herokuapp.com/hotel.php" enctype="multipart/form-data">
 
-   <div class="form-group">
-    <label for="title">Destination City</label>
-    <input type="text" name="title" id="title" value="" class="form-control"/>
-   </div>
+            <div class="form-group">
+                {#a dropdown list could be creaated from DB #}
+                <label for="title">Destination City</label>
+                <input type="text" name="title" id="title" value="" class="form-control"/>
+            </div>
 
-   <div class="form-group">
-    <label for="author">Start Date</label>
-    <input type="text" name="author" id="author" value="" class="form-control"/>
-   </div>
+            <div class="form-group">
+                <label for="author">Start Date</label>
+                <input type="text" name="author" id="author" value="{{ "now"|date_modify("+1 day")|date("Y-m-d") }}" class="form-control"/>
+            </div>
 
-   <div class="form-group">
-    <label for="published_date">End Date</label>
+            <div class="form-group">
+                <label for="published_date">End Date</label>
 
-    <div class='input-group date' id='datetimepicker1'>
-     <input type='text' class="form-control" />
-     <span class="input-group-addon">
+                <div class='input-group date' id='datetimepicker1'>
+                    <input type='text' class="form-control"/>
+                    <span class="input-group-addon">
                         <span class="glyphicon glyphicon-calendar"></span>
                     </span>
+                </div>
+                <script type="text/javascript">
+                    $(function () {
+                        $('#datetimepicker1').datetimepicker();
+                    });
+                </script>
+            </div>
+
+            <div class="form-group">
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        length of Stay
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        {% for i is 1..5 %}
+                        <a class="dropdown-item" href="#">{{ i }}</a>
+
+                    </div>
+                </div>
+            </div>
+
+            <button id="submit" type="submit" class="btn btn-success">Filter</button>
+        </form>
+
     </div>
-    <script type="text/javascript">
-        $(function () {
-            $('#datetimepicker1').datetimepicker();
-        });
-    </script>
-   </div>
-
-   <div class="form-group">
-    <label for="description">length of Stay</label>
-    <textarea name="description" id="description" class="form-control">{{book.description}}</textarea>
-   </div>
-
-   <button id="submit" type="submit" class="btn btn-success">Filter</button>
-  </form>
-
- </div>
 </div>
