@@ -1,17 +1,7 @@
 <div class="container">
     <div class="row">
         <h1>Hotels</h1>
-        <div class="media">
-            <div class="media-left">
-                <a href="#">
-                    <img class="media-object" src="..." alt="...">
-                </a>
-            </div>
-            <div class="media-body">
-                <h4 class="media-heading">Media heading</h4>
-                ...
-            </div>
-        </div>
+
         {#<table cellpadding="12">#}
         {#{% for hotel in offers.Hotel %}#}
         {#<tr class="row">#}
@@ -29,17 +19,19 @@
         {#</tr>#}
         {#{% endfor %}#}
         {#</table>#}
-        <ul class="list-unstyled">
         {% for hotel in offers.Hotel %}
-            <li class="media">
-                <img class="mr-3" src="{{ hotel.hotelInfo.hotelImageUrl }}" alt="Generic placeholder image">
+            <div class="media">
+                <div class="media-left">
+                    <a href="#">
+                        <img class="media-object" src="{{ hotel.hotelInfo.hotelImageUrl }}" alt="...">
+                    </a>
+                </div>
                 <div class="media-body">
-                    <h5 class="mt-0 mb-1">{{ hotel.hotelInfo.hotelName }}<span class="badge badge-secondary">{{ hotel.hotelInfo.hotelStarRating|number_format }}/5</span></h5>
+                    <h4 class="media-heading">{{ hotel.hotelInfo.hotelName }}<span class="badge badge-secondary">{{ hotel.hotelInfo.hotelStarRating|number_format }}/5</span></h4>
                     Price per Night:</b>{{ hotel.hotelPricingInfo.originalPricePerNight }} {{ hotel.hotelPricingInfo.currency }}
                     <i>Save Up To {{ hotel.hotelPricingInfo.percentSavings|number_format }} %</i>
                 </div>
-            </li>
+            </div>
         {% endfor %}
-        </ul>
     </div>
 </div>
