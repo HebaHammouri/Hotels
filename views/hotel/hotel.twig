@@ -1,41 +1,7 @@
 <div class="container">
-    <div class="row">
+    <li class="row">
         <h1>Hotels</h1>
-        <form method="POST" action="https://hhammouri-hotels.herokuapp.com/hotel.php" enctype="multipart/form-data">
 
-            <div class="form-group">
-                <label for="title">Destination City</label>
-                <input type="text" name="title" id="title" value="" class="form-control"/>
-            </div>
-
-            <div class="form-group">
-                <label for="author">Start Date</label>
-                <input type="text" name="author" id="author" value="" class="form-control"/>
-            </div>
-
-            <div class="form-group">
-                <label for="published_date">End Date</label>
-
-                <div class='input-group date' id='datetimepicker1'>
-                    <input type='text' class="form-control" />
-                    <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-calendar"></span>
-                    </span>
-                </div>
-                <script type="text/javascript">
-                    $(function () {
-                        $('#datetimepicker1').datetimepicker();
-                    });
-                </script>
-            </div>
-
-            <div class="form-group">
-                <label for="description">length of Stay</label>
-                <textarea name="description" id="description" class="form-control">{{book.description}}</textarea>
-            </div>
-
-            <button id="submit" type="submit" class="btn btn-success">Filter</button>
-        </form>
         {#<table cellpadding="12">#}
         {#{% for hotel in offers.Hotel %}#}
         {#<tr class="row">#}
@@ -53,15 +19,17 @@
         {#</tr>#}
         {#{% endfor %}#}
         {#</table>#}
+        <ul class="list-unstyled">
         {% for hotel in offers.Hotel %}
-        <div class="card card mb-3">
-            <img class="card-img-top" src="{{ hotel.hotelInfo.hotelImageUrl }}" alt="Card image cap">
-            <div class="card-body">
-                <h5 class="card-title">{{ hotel.hotelInfo.hotelName }}<span class="badge badge-secondary">{{ hotel.hotelInfo.hotelStarRating|number_format }}/5</span></h5>
-                <p class="card-text">Price per Night:</b>{{ hotel.hotelPricingInfo.originalPricePerNight }} {{ hotel.hotelPricingInfo.currency }}
-                    <i>Save Up To {{ hotel.hotelPricingInfo.percentSavings|number_format }} %</i></p>
-            </div>
-        </div>
+            <li class="media">
+                <img class="mr-3" src="{{ hotel.hotelInfo.hotelImageUrl }}" alt="Generic placeholder image">
+                <div class="media-body">
+                    <h5 class="mt-0 mb-1">{{ hotel.hotelInfo.hotelName }}<span class="badge badge-secondary">{{ hotel.hotelInfo.hotelStarRating|number_format }}/5</span></h5>
+                    Price per Night:</b>{{ hotel.hotelPricingInfo.originalPricePerNight }} {{ hotel.hotelPricingInfo.currency }}
+                    <i>Save Up To {{ hotel.hotelPricingInfo.percentSavings|number_format }} %</i>
+                </div>
+            </li>
         {% endfor %}
+        </ul>
     </div>
 </div>
