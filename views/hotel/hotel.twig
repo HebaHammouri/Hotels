@@ -18,12 +18,13 @@
             {#</div>#}
         {#{% endfor %}#}
         {% for hotel in offers.Hotel %}
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <img src="{{ hotel.hotelInfo.hotelImageUrl }}" alt="...">
-                {{ hotel.hotelInfo.hotelName }}</div>
-            <div class="panel-body">
+        <div class="well well-lg">
+            <img src="{{ hotel.hotelInfo.hotelImageUrl }}" alt="...">
+            {{ hotel.hotelInfo.hotelName }}
+            <div class="col-sm-8">
                 Price per Night:</b> {{ hotel.hotelPricingInfo.originalPricePerNight }} {{ hotel.hotelPricingInfo.currency }}
+            </div>
+            <div class="col-sm-4">
                 <i>Save Up To {{ hotel.hotelPricingInfo.percentSavings|number_format }} %</i>.
             </div>
         </div>
