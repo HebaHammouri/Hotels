@@ -1,55 +1,56 @@
 <div class="jumbotron">
-<div class="container">
-    <div class="row">
-        <h4>Search a Hotel</h4>
+    <div class="container">
+        <div class="row">
+            <h4>Search a Hotel</h4>
 
-        <form method="POST" action="https://hhammouri-hotels.herokuapp.com/hotel.php" enctype="multipart/form-data">
+            <form method="POST" action="https://hhammouri-hotels.herokuapp.com/hotel.php" enctype="multipart/form-data">
 
-            <div class="form-group">
-                {#a dropdown list could be creaated from DB #}
-                <label for="Destination">Destination City</label>
-                <input type="text" name="title" id="title" value="" class="form-control"/>
-            </div>
+                <div class="form-group col-sm-3">
+                    {#a dropdown list could be creaated from DB #}
+                    <label for="Destination">Destination City</label>
+                    <input type="text" name="title" id="title" value="" class="form-control"/>
+                </div>
 
-            <div class="form-group">
-                <label for="start-date">Start Date</label>
-                <input type="text" name="author" id="author" value="{{ "now"|date_modify("+1 day")|date("Y-m-d") }}" class="form-control"/>
-            </div>
+                <div class="form-group col-sm-3">
+                    <label for="start-date">Start Date</label>
+                    <input type="date" name="author" id="author" value="{{ "now"|date_modify("+1 day")|date("Y-m-d") }}"
+                           class="form-control"/>
+                </div>
 
-            <div class="form-group">
-                <label for="end-date">End Date</label>
+                <div class="form-group col-sm-3">
+                    <label for="end-date">End Date</label>
 
-                <div class='input-group date' id='datetimepicker1'>
-                    <input type='text' class="form-control"/>
-                    <span class="input-group-addon">
+                    <div class='input-group date' id='datetimepicker1'>
+                        <input type='text' class="form-control"/>
+                        <span class="input-group-addon">
                         <span class="glyphicon glyphicon-calendar"></span>
                     </span>
+                    </div>
+                    <script type="text/javascript">
+                        $(function () {
+                            $('#datetimepicker1').datetimepicker();
+                        });
+                    </script>
                 </div>
-                <script type="text/javascript">
-                    $(function () {
-                        $('#datetimepicker1').datetimepicker();
-                    });
-                </script>
-            </div>
 
-            <div class="form-group">
-                {#a dropdown list could be creaated from DB #}
-                <label for="Destination">Length of Stay</label>
-                <input type="text" name="title" id="title" value="" class="form-control"/>
-            </div>
+                <div class="form-group col-sm-3">
+                    {#a dropdown list could be creaated from DB #}
+                    <label for="Destination">Length of Stay</label>
+                    <input type="text" name="title" id="title" value="" class="form-control"/>
+                </div>
 
-            <div class="form-group">
-                <label for="stay-length">Rate</label>
-                <select class="form-control" id="exampleFormControlSelect1">
+                <div class="form-group col-sm-3">
+                    <label for="stay-length">Rate</label>
+                    <select class="form-control" id="exampleFormControlSelect1">
                         {% for i in 1..5 %}
                             <option>{{ i }} & up</option>
-                    {% endfor %}
-                </select>
-            </div>
+                        {% endfor %}
+                    </select>
+                </div>
 
-            <button id="submit" type="submit" class="btn btn-success">Search</button>
-        </form>
+                <button id="submit" type="submit" class="btn btn-success">Search</button>
+            </form>
 
+        </div>
     </div>
-</div>
 </div>
