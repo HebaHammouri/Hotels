@@ -10,7 +10,7 @@ class Hotel extends Controller {
     public function index()
     {
         $HotelsArray = $this->getHotelsList();
-die($_POST);
+die($_POST["title"]);
         $this->view->render('header',['title'=>'Hotels']);
         $this->view->render('index/index',['offers'=>$HotelsArray]);
         $this->view->render('hotel/hotel',['offers'=>$HotelsArray]);
