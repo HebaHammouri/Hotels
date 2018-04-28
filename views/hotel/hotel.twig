@@ -9,11 +9,12 @@
                     </div>
                     <div class="col-sm-6">
                         <p class="navbar-text">
-                        <h4>{{ hotel.hotelInfo.hotelName }}<span class="glyphicon glyphicon-star">{{ hotel.hotelInfo.hotelStarRating|number_format }}/5</span></h4>
+                        <h4>{{ hotel.hotelInfo.hotelName }}</h4>
                         {{ hotel.destination.city }}, {{ hotel.destination.province }}</p>
                     </div>
                     <div class="col-sm-4">
                         <p class="navbar-text">
+                            <span class="glyphicon glyphicon-star">{{ hotel.hotelInfo.hotelStarRating|number_format }}/5</span><br />
                             <strike>{{ hotel.hotelPricingInfo.originalPricePerNight }}{{ hotel.hotelPricingInfo.currency }}</strike> {{ hotel.hotelPricingInfo.totalPriceValue }}{{ hotel.hotelPricingInfo.currency }}
                             <br /><i>Save Up To {{ hotel.hotelPricingInfo.percentSavings|number_format }} %</i></p>
                     </div>
