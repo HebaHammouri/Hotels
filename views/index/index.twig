@@ -5,6 +5,13 @@
 
             <form method="POST" action="https://hhammouri-hotels.herokuapp.com/hotel.php" enctype="multipart/form-data">
                 <div class="form-group col-sm-12">
+                    <div class="search-widget">
+                        <div class="input-group margin-bottom-sm">
+                            <textarea class="form-control" cols="12" id="autocomplete_textarea" name="SelectedCountry" rows="1" placeholder="Enter a location" autocomplete="off"></textarea>
+
+
+                        </div>
+                    </div>
                     {#a dropdown list could be creaated from DB #}
                     <label for="Destination">Destination City</label>
                     <select class="form-control bfh-countries" data-country="US"></select>
