@@ -11,6 +11,4 @@ class Index extends Controller {
         $this->view->render('index/index',['default'=>'This is the main page welcome!']);
         $this->view->render('footer',[]);
     }
-
-    
 }
