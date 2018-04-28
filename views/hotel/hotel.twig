@@ -1,47 +1,21 @@
 <div class="container">
     <div class="row">
         <h1>Hotels</h1>
-        {#{% for hotel in offers.Hotel %}#}
-        {#<div class="col-sm-4">#}
-            {#<div class="media">#}
-                {#<div class="media-left">#}
-                    {#<a href="#">#}
-                        {#<img class="media-object" src="{{ hotel.hotelInfo.hotelImageUrl }}" alt="{{ hotel.hotelInfo.hotelName }}">#}
-                    {#</a>#}
-                {#</div>#}
-                {#<div class="media-body">#}
-                    {#<h4 class="media-heading">{{ hotel.hotelInfo.hotelName }}<span class="badge badge-secondary">{{ hotel.hotelInfo.hotelStarRating|number_format }}/5</span></h4>#}
-                    {#<p>Price per Night:</b> {{ hotel.hotelPricingInfo.originalPricePerNight }} {{ hotel.hotelPricingInfo.currency }}#}
-                        {#<i>Save Up To {{ hotel.hotelPricingInfo.percentSavings|number_format }} %</i></p>#}
-                {#</div>#}
-            {#</div>#}
-            {#</div>#}
-        {#{% endfor %}#}
         {% for hotel in offers.Hotel %}
         <div class="well well-lg">
             <div class="row">
             <div class="col-sm-8">
             <img src="{{ hotel.hotelInfo.hotelImageUrl }}" alt="...">
-                <h3>{{ hotel.hotelInfo.hotelName }} <span class="glyphicon glyphicon-star">{{ hotel.hotelInfo.hotelStarRating|number_format }}/5</span></h3>
+                {{ hotel.hotelInfo.hotelName }} <span class="glyphicon glyphicon-star">{{ hotel.hotelInfo.hotelStarRating|number_format }}/5</span>
                 <p class="navbar-text">{{ hotel.destination.city }}, {{ hotel.destination.province }}</p>
-                Price per Night:</b> {{ hotel.hotelPricingInfo.originalPricePerNight }} {{ hotel.hotelPricingInfo.currency }}
             </div>
             <div class="col-sm-4">
-                <i>Save Up To {{ hotel.hotelPricingInfo.percentSavings|number_format }} %</i>.
+                <p class="navbar-text"><strike>{{ hotel.hotelPricingInfo.originalPricePerNight }}</strike>{{ hotel.hotelPricingInfo.totalPriceValue }} {{ hotel.hotelPricingInfo.currency }}
+                    <i>Save Up To {{ hotel.hotelPricingInfo.percentSavings|number_format }} %</i></p>
             </div>
         </div>
         </div>
-            {#<div class="col-sm-4">#}
-                {#<div class="thumbnail">#}
-                    {#<img src="{{ hotel.hotelInfo.hotelImageUrl }}" alt="...">#}
-                    {#<div class="caption">#}
-                        {#<h3>{{ hotel.hotelInfo.hotelName }}</h3>#}
-                        {#<p>Price per Night:</b> {{ hotel.hotelPricingInfo.originalPricePerNight }} {{ hotel.hotelPricingInfo.currency }}#}
-                            {#<i>Save Up To {{ hotel.hotelPricingInfo.percentSavings|number_format }} %</i>.</p>#}
-                        {#</div>#}
-                {#</div>#}
-            {#</div>#}
-        {#</div>#}
+
         {% endfor %}
     </div>
 </div>
