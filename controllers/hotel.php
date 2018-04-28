@@ -12,6 +12,7 @@ class Hotel extends Controller {
         $HotelsArray = $this->getHotelsList();
 
         $this->view->render('header',['title'=>'Hotels']);
+        $this->view->render('index/index',['offers'=>$HotelsArray]);
         $this->view->render('hotel/hotel',['offers'=>$HotelsArray]);
         $this->view->render('footer',[]);
     }
