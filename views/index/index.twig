@@ -1,6 +1,13 @@
 <div class="container">
     <div class="row">
         <h1>Search a Hotel</h1>
+        <div class="media">
+            <img class="mr-3" src="..." alt="Generic placeholder image">
+            <div class="media-body">
+                <h5 class="mt-0">Media heading</h5>
+                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+            </div>
+        </div>
 
         <form method="POST" action="https://hhammouri-hotels.herokuapp.com/hotel.php" enctype="multipart/form-data">
 
@@ -32,10 +39,16 @@
             </div>
 
             <div class="form-group">
-                <label for="stay-length">Length of Stay</label>
+                {#a dropdown list could be creaated from DB #}
+                <label for="Destination">Length of Stay</label>
+                <input type="text" name="title" id="title" value="" class="form-control"/>
+            </div>
+
+            <div class="form-group">
+                <label for="stay-length">Rate</label>
                 <select class="form-control" id="exampleFormControlSelect1">
                         {% for i in 1..5 %}
-                            <option>{{ i }}</option>
+                            <option>{{ i }} & up</option>
                     {% endfor %}
                 </select>
             </div>
