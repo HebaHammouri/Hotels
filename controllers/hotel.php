@@ -22,7 +22,7 @@ class Hotel extends Controller {
     private function getHotelsList()
     {
         try {
-            die($_SERVER['argv']);
+            die($_GET["author"]);
             $Url = "https://offersvc.expedia.com/offers/v2/getOffers?scenario=deal-finder&page=foo&uid=foo&productType=Hotel";
             $response = $this->sendRequest($Url);
             $response = json_decode($response);
