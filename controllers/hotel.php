@@ -10,7 +10,6 @@ class Hotel extends Controller {
     public function index()
     {
         $HotelsArray = $this->getHotelsList();
-die(file_get_contents('php://input'));
         $this->view->render('header',['title'=>'Hotels']);
         $this->view->render('index/index',['offers'=>$HotelsArray]);
         $this->view->render('hotel/hotel',['offers'=>$HotelsArray]);
@@ -23,6 +22,7 @@ die(file_get_contents('php://input'));
     private function getHotelsList()
     {
         try {
+            die($_GET["title"]);
             $Url = "https://offersvc.expedia.com/offers/v2/getOffers?scenario=deal-finder&page=foo&uid=foo&productType=Hotel";
             $response = $this->sendRequest($Url);
             $response = json_decode($response);
