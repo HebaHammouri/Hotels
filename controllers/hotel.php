@@ -12,6 +12,10 @@ class Hotel extends Controller {
     public function index()
     {
         $this->url = "https://offersvc.expedia.com/offers/v2/getOffers?scenario=deal-finder&page=foo&uid=foo&productType=Hotel";
+        foreach ($_POST as $k => $v){
+            echo $k . " = " .$v ;
+        }
+        die();
         $this->getFilterData();
         $HotelsArray = $this->getHotelsList();
         $this->view->render('header',['title'=>'Hotels']);
@@ -115,8 +119,6 @@ class Hotel extends Controller {
     private function sendRequest()
     {
         try{
-
-            die($_POST);
             $request = curl_init($this->url);
             curl_setopt($request, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
             curl_setopt($request, CURLOPT_RETURNTRANSFER, true);
