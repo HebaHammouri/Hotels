@@ -12,9 +12,7 @@ class Hotel extends Controller {
     public function index()
     {
         $this->url = "https://offersvc.expedia.com/offers/v2/getOffers?scenario=deal-finder&page=foo&uid=foo&productType=Hotel";
-        foreach ($_POST as $k => $v){
-            echo $k . " = " .$v ;
-        }
+
         die();
         $this->getFilterData();
         $HotelsArray = $this->getHotelsList();
