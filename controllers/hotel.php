@@ -117,6 +117,7 @@ class Hotel extends Controller {
     private function sendRequest()
     {
         try{
+            die($this->url);
             $request = curl_init($this->url);
             curl_setopt($request, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
             curl_setopt($request, CURLOPT_RETURNTRANSFER, true);
